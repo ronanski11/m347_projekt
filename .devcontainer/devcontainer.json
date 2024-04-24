@@ -1,0 +1,25 @@
+{
+    "name": "Spring Boot + PostgreSQL Dev Container",
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "springboot-app",
+    "workspaceFolder": "/app",
+    "customizations": {
+        "vscode": {
+            "settings": { 
+                "terminal.integrated.shell.linux": "/bin/bash",
+                "java.home": "/docker-java-home"
+            },
+            "extensions": [
+                "vscjava.vscode-java-pack",
+                "pivotal.vscode-spring-boot",
+                "redhat.vscode-xml"
+            ]
+        }
+    },
+
+// Custom commands that can be run when the container is created
+"postCreateCommand": "echo 'Container ready!'",
+
+// Specifies that the container should be run as a non-root user
+"remoteUser": "root"
+}
